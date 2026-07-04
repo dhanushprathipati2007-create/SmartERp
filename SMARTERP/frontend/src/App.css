@@ -1,0 +1,907 @@
+/* ==========================================================
+   SMART ERP - APP.CSS (PART 1)
+   Layout + Sidebar + Navbar + Dashboard
+========================================================== */
+
+/* ---------- Main Layout ---------- */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #1e2a55;
+  color: white;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sidebar-header {
+  padding: 30px 25px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.sidebar-header h1 {
+  font-size: 34px;
+  color: white;
+}
+
+.sidebar-menu {
+  padding: 25px 15px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.sidebar-menu a:hover {
+  background: #3154c7;
+}
+
+.sidebar-menu .active {
+  background: #3b82f6;
+}
+
+/* ---------- Main Content ---------- */
+
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ---------- Header ---------- */
+
+.topbar {
+    position:fixed;
+    top:0;
+    left:260px;
+    right:0;
+    height:70px;
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+}
+
+/* ---------- Page Content ---------- */
+
+.page-content {
+    margin-top:70px;
+    padding:30px;
+    flex:1;
+    background:#f4f7fb;
+}
+
+/* ---------- Dashboard Title ---------- */
+
+.dashboard-title {
+  margin-bottom: 30px;
+}
+
+.dashboard-title h1 {
+  margin-bottom: 5px;
+}
+
+.dashboard-title p {
+  color: #6b7280;
+}
+
+/* ---------- KPI Cards ---------- */
+
+.kpi-grid {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kpi-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+  transition: .3s;
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
+}
+
+.kpi-title {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.kpi-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.kpi-subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #22c55e;
+}
+
+/* ---------- Dashboard Grid ---------- */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* ---------- Dashboard Cards ---------- */
+
+.dashboard-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+
+.dashboard-card h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* ---------- Company Info ---------- */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+}
+
+.info-item {
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+.info-item label {
+  font-size: 13px;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.info-item span {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ---------- Recent Activity ---------- */
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.activity {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+/* ---------- Quick Stats ---------- */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.stat-box {
+  background: #eff6ff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-box h2 {
+  margin: 0;
+  color: #2563eb;
+}
+
+.stat-box p {
+  margin-top: 8px;
+  color: #64748b;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:1100px){
+.dashboard-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+    .sidebar{
+        transform:translateX(-100%);
+    }
+
+    .main-content{
+        margin-left:0;
+    }
+
+    .topbar{
+        left:0;
+    }
+
+    .page-content{
+        padding:20px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+}
+    .stats-grid{
+        grid-template-columns:1fr;
+  }
+}
+
+/* ==========================================================
+   SMART ERP - APP.CSS (PART 2)
+   Forms + Tables + Buttons + Shared Components
+==========================================================*/
+
+
+/* ===========================
+   Page Card
+=========================== */
+
+.page-card{
+    background:#fff;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    margin-bottom:30px;
+}
+
+.page-card h2{
+    margin-bottom:25px;
+    color:#0f172a;
+}
+
+
+/* ===========================
+   ERP Form
+=========================== */
+
+.erp-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+
+    padding:13px 15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.form-group textarea{
+
+    resize:vertical;
+
+    min-height:110px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+    outline:none;
+}
+
+
+/* ===========================
+   Full Width Fields
+=========================== */
+
+.full-width{
+
+    grid-column:1/-1;
+}
+
+
+/* ===========================
+   Buttons
+=========================== */
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:10px;
+
+    grid-column:1/-1;
+}
+
+.btn{
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-primary{
+
+    background:#2563eb;
+
+    color:white;
+}
+
+.btn-primary:hover{
+
+    background:#1d4ed8;
+}
+
+.btn-success{
+
+    background:#10b981;
+
+    color:white;
+}
+
+.btn-success:hover{
+
+    background:#059669;
+}
+
+.btn-warning{
+
+    background:#f59e0b;
+
+    color:white;
+}
+
+.btn-warning:hover{
+
+    background:#d97706;
+}
+
+.btn-danger{
+
+    background:#ef4444;
+
+    color:white;
+}
+
+.btn-danger:hover{
+
+    background:#dc2626;
+}
+
+
+/* ===========================
+   Search Bar
+=========================== */
+
+.search-bar{
+
+    width:320px;
+
+    padding:12px 15px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+}
+
+
+/* ===========================
+   Table Card
+=========================== */
+
+.table-card{
+
+    background:#fff;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+
+/* ===========================
+   Table Header
+=========================== */
+
+.table-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+
+/* ===========================
+   ERP Table
+=========================== */
+
+.erp-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+.erp-table thead{
+
+    background:#1e293b;
+
+    color:white;
+}
+
+.erp-table th{
+
+    padding:16px;
+
+    text-align:left;
+
+    font-size:15px;
+}
+
+.erp-table td{
+
+    padding:15px;
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+.erp-table tbody tr{
+
+    transition:.3s;
+}
+
+.erp-table tbody tr:hover{
+
+    background:#f8fafc;
+}
+
+
+/* ===========================
+   Status Badge
+=========================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.badge-success{
+
+    background:#dcfce7;
+
+    color:#15803d;
+}
+
+.badge-danger{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+}
+
+.badge-warning{
+
+    background:#fef3c7;
+
+    color:#b45309;
+}
+
+
+/* ===========================
+   Action Buttons
+=========================== */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:8px;
+}
+
+.action-btn{
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:8px 12px;
+
+    cursor:pointer;
+
+    color:white;
+
+    transition:.3s;
+}
+
+.edit-btn{
+
+    background:#f59e0b;
+}
+
+.edit-btn:hover{
+
+    background:#d97706;
+}
+
+.delete-btn{
+
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+
+    background:#dc2626;
+}
+
+.select-btn{
+
+    background:#10b981;
+}
+
+.select-btn:hover{
+
+    background:#059669;
+}
+
+
+/* ===========================
+   Empty State
+=========================== */
+
+.empty-state{
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#64748b;
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:900px){
+
+.erp-form{
+
+grid-template-columns:1fr;
+
+}
+
+.table-toolbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.search-bar{
+
+width:100%;
+
+}
+
+.button-group{
+
+flex-wrap:wrap;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.erp-table{
+
+display:block;
+
+overflow-x:auto;
+
+white-space:nowrap;
+
+}
+
+.page-card{
+
+padding:20px;
+
+}
+
+.table-card{
+
+padding:20px;
+
+}
+
+}
+
+/* Sidebar Header */
+
+.sidebar-header{
+    padding:30px 20px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:700;
+    margin:0;
+}
+
+.logo-subtitle{
+    color:#cbd5e1;
+    font-size:13px;
+    margin-top:8px;
+}
+
+/* Sidebar Menu */
+
+.sidebar-menu{
+    display:flex;
+    flex-direction:column;
+    padding:20px 15px;
+}
+
+.sidebar-menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 18px;
+    margin-bottom:8px;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+    font-weight:500;
+}
+
+.sidebar-menu a:hover{
+    background:#3154c7;
+}
+
+.sidebar-menu a.active{
+    background:#2563eb;
+}
+
+.menu-icon{
+    font-size:18px;
+    width:24px;
+    text-align:center;
+}
+
+/* Sidebar Footer */
+
+.sidebar-footer{
+    position:absolute;
+    bottom:20px;
+    left:0;
+    width:100%;
+    text-align:center;
+    color:#cbd5e1;
+    font-size:13px;
+}
+
+.sidebar-footer small{
+    display:block;
+    margin-top:5px;
+    opacity:.8;
+}
+
+/* ==========================================
+   GROUP MANAGEMENT (DAY 7)
+========================================== */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.page-title h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.page-title p {
+    margin-top: 6px;
+    color: #64748b;
+}
+
+.form-card,
+.table-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+.erp-form {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+
+.erp-form input,
+.erp-form select,
+.erp-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.erp-form textarea {
+    grid-column: 1 / 3;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.erp-form button {
+    grid-column: 1 / 3;
+}
+
+.erp-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.erp-table th {
+    background: #1f2937;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+.erp-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.erp-table tr:hover {
+    background: #f8fafc;
+}
+
+@media (max-width: 768px) {
+
+    .erp-form {
+        grid-template-columns: 1fr;
+    }
+
+    .erp-form textarea,
+    .erp-form button {
+        grid-column: 1;
+    }
+}
