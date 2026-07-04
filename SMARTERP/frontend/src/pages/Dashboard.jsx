@@ -22,6 +22,89 @@ function Dashboard() {
     }
   }, []);
 
+  useEffect(() => {
+  const handleKeyDown = (event) => {
+
+    // Global Shortcuts
+    if (event.key === "F1") {
+      event.preventDefault();
+      alert("Company Selection (F1)");
+    }
+
+    if (event.key === "F2") {
+      event.preventDefault();
+      alert("Change Financial Year (F2)");
+    }
+
+    if (event.key === "F3") {
+      event.preventDefault();
+      alert("Company Information (F3)");
+    }
+
+    if (event.key === "F4") {
+      event.preventDefault();
+      alert("Calculator (F4)");
+    }
+
+    if (event.key === "F5") {
+      event.preventDefault();
+      window.location.reload();
+    }
+
+    if (event.key === "Escape") {
+      alert("Back Navigation (ESC)");
+    }
+
+    // CTRL shortcuts
+    if (event.ctrlKey && event.key === "q") {
+      event.preventDefault();
+      alert("Logout (CTRL + Q)");
+    }
+
+    if (event.ctrlKey && event.key === "h") {
+      event.preventDefault();
+      alert("Home (CTRL + H)");
+    }
+
+    if (event.ctrlKey && event.key === "k") {
+      event.preventDefault();
+      alert("Command Search (CTRL + K)");
+    }
+
+    // ALT shortcuts
+    if (event.altKey && event.key === "l") {
+      event.preventDefault();
+      alert("Create Ledger (ALT + L)");
+    }
+
+    if (event.altKey && event.key === "a") {
+      event.preventDefault();
+      alert("Alter Ledger (ALT + A)");
+    }
+
+    if (event.altKey && event.key === "g") {
+      event.preventDefault();
+      alert("Create Group (ALT + G)");
+    }
+
+    if (event.altKey && event.key === "s") {
+      event.preventDefault();
+      alert("Create Stock Item (ALT + S)");
+    }
+
+    if (event.altKey && event.key === "u") {
+      event.preventDefault();
+      alert("Unit Creation (ALT + U)");
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
+
   const fetchDashboard = async () => {
     try {
       const res = await axios.get("http://localhost:5000/api/dashboard");
@@ -46,6 +129,44 @@ function Dashboard() {
         <h1>Dashboard</h1>
         <p>Welcome to SmartERP Business Management System</p>
       </div>
+
+      <div className="dashboard-card" style={{
+  marginTop: "15px",
+  background: "#111827",
+  color: "white"
+}}>
+
+  <h3>⌨ Keyboard Shortcuts</h3>
+
+  <div style={{ display: "flex", gap: "40px", flexWrap: "wrap" }}>
+
+    <div>
+      <h4>⚡ Global</h4>
+      <ul>
+        <li>F1 = Company Selection</li>
+        <li>F2 = Financial Year</li>
+        <li>F3 = Company Info</li>
+        <li>F4 = Calculator</li>
+        <li>F5 = Refresh</li>
+        <li>ESC = Back</li>
+        <li>CTRL + Q = Logout</li>
+        <li>CTRL + K = Search</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>📦 Masters</h4>
+      <ul>
+        <li>ALT + L = Ledger</li>
+        <li>ALT + A = Alter</li>
+        <li>ALT + G = Group</li>
+        <li>ALT + S = Stock Item</li>
+        <li>ALT + U = Unit</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
 
       {/* KPI Cards */}
 
@@ -245,6 +366,8 @@ function Dashboard() {
           </div>
 
         </div>
+
+        
 
       </div>
 
