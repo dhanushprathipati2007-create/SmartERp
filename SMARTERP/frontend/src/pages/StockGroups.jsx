@@ -22,7 +22,7 @@ function StockGroups() {
         try {
 
             const res = await axios.get(
-                "${API}/api/stock-groups"
+                `${API}/api/stock-groups`
             );
 
             setStockGroups(res.data);
@@ -69,7 +69,7 @@ function StockGroups() {
 
                 await axios.post(
 
-                    "${API}/api/stock-groups",
+                    `${API}/api/stock-groups`,
 
                     form
 

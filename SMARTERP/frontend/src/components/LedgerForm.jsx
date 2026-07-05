@@ -38,7 +38,7 @@ function LedgerForm({ fetchLedgers, editingLedger, clearEdit }) {
 const loadCompanies = async () => {
     try {
         const res = await axios.get(
-            "${API}/api/companies"
+            `${API}/api/companies`
         );
 
         console.log(res.data);
@@ -91,7 +91,7 @@ await axios.put(
 const token = localStorage.getItem("token");
 
 await axios.post(
-    "${API}/api/ledgers",
+    `${API}/api/ledgers`,
     ledger,
     {
         headers: {

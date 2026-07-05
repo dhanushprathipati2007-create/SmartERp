@@ -53,7 +53,7 @@ const loadCompanies = async () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-            "${API}//api/companies/my-companies",
+            `${API}//api/companies/my-companies`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -100,7 +100,7 @@ const config = {
 };
 
 await axios.post(
-    "${API}//api/customers",
+    `${API}//api/customers`,
     customer,
     config
 );
@@ -113,7 +113,7 @@ await axios.post(
 
                 await axios.post(
 
-                    "${API}//api/customers",
+                   `${API} //api/customers`,
 
                     customer,
                     config

@@ -53,7 +53,7 @@ function StockItems() {
 
             const res = await axios.get(
 
-                "${API}/api/stock-items"
+                `${API}/api/stock-items`
 
             );
 
@@ -75,7 +75,7 @@ function StockItems() {
 
             const res = await axios.get(
 
-                "${API}/api/stock-groups"
+                `${API}/api/stock-groups`
 
             );
 
@@ -97,7 +97,7 @@ function StockItems() {
 
             const res = await axios.get(
 
-                "${API}/api/units"
+                `${API}/api/units`
 
             );
 
@@ -170,7 +170,7 @@ const handleChange = (e) => {
 
                 await axios.post(
 
-                    "${API}/api/stock-items",
+                    `${API}/api/stock-items`,
 
                     payload
 

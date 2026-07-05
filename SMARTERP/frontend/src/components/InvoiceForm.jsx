@@ -36,17 +36,17 @@ const loadData = async () => {
     };
 
     const companyRes = await axios.get(
-        "${API}/api/companies",
+        `${API}/api/companies`,
         config
     );
 
     const customerRes = await axios.get(
-        "${API}/api/customers",
+        `${API}/api/customers`,
         config
     );
 
     const itemRes = await axios.get(
-        "${API}/api/stock-items");
+        `${API}/api/stock-items`);
         setItems(itemRes.data);
     
 
@@ -79,7 +79,7 @@ const submitInvoice = async (e) => {
     const token = localStorage.getItem("token");
 
     await axios.post(
-        "${API}/api/billing",
+        `${API}/api/billing`,
         invoice,
         {
             headers: {

@@ -23,7 +23,7 @@ const fetchCustomers = async () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-            "${API}/api/customers",
+            `${API}/api/customers`,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,

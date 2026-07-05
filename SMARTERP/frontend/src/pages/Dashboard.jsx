@@ -107,7 +107,7 @@ function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get("${API}/api/dashboard");
+      const res = await axios.get(`${API}/api/dashboard`);
 
       setDashboard({
         totalCompanies: res.data.totalCompanies || 0,

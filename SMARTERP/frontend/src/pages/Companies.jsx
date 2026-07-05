@@ -21,7 +21,7 @@ function Companies() {
         try {
 
 const res = await axios.get(
-    "${API}/api/companies",
+    `${API}/api/companies`,
     {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

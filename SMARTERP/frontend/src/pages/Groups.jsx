@@ -20,7 +20,7 @@ function Groups() {
 
   const fetchGroups = async () => {
     try {
-      const res = await axios.get("${API}/api/groups");
+      const res = await axios.get(`${API}/api/groups`);
       setGroups(res.data);
     } catch (err) {
       console.log(err);
@@ -45,7 +45,7 @@ function Groups() {
         );
       } else {
         await axios.post(
-          "${API}/api/groups",
+          `${API}/api/groups`,
           form
         );
       }

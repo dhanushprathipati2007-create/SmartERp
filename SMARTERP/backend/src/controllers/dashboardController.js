@@ -19,6 +19,10 @@ exports.getDashboardStats = async (req, res) => {
       "SELECT * FROM companies LIMIT 1"
     );
 
+    const stockItemCount = await pool.query(
+  "SELECT COUNT(*) FROM stock_items"
+);
+
 
     const company = activeCompany.rows[0];
 
@@ -26,7 +30,7 @@ exports.getDashboardStats = async (req, res) => {
         totalCompanies: companyCount.rows[0].count,
         totalCustomers: customerCount.rows[0].count,
         totalLedgers: ledgerCount.rows[0].count,
-
+        totalStockItems: stockItemCount.rows[0].count,
         companyName: company?.company_name || "",
         address: company?.address || "",
         gstNumber: company?.gst_number || "",

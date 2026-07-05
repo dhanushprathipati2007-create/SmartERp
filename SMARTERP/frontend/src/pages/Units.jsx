@@ -23,7 +23,7 @@ function Units() {
         try {
 
             const res = await axios.get(
-                "${API}/api/units"
+                `${API}/api/units`
             );
 
             setUnits(res.data);
@@ -70,7 +70,7 @@ function Units() {
 
                 await axios.post(
 
-                    "${API}/api/units",
+                    `${API}/api/units`,
 
                     form
 

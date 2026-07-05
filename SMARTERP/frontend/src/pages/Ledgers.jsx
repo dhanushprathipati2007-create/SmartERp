@@ -23,7 +23,7 @@ function Ledgers() {
 const token = localStorage.getItem("token");
 
 const res = await axios.get(
-    "${API}/api/ledgers",
+    `${API}/api/ledgers`,
     {
         headers: {
             Authorization: `Bearer  ${localStorage.getItem("token")}`,

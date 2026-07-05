@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
         } else {
 
             res = await axios.post(
-                "${API}/api/companies",
+                `${API}/api/companies`,
                 company,
                 {
                     headers: {

@@ -12,7 +12,7 @@ function InvoiceTable({ refresh, onView }) {
     const loadInvoices = async () => {
 
         const res = await axios.get(
-            "${API}/api/billing"
+            `${API}/api/billing`
         );
 
         setInvoices(res.data);
