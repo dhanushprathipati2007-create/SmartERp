@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function Groups() {
   const [groups, setGroups] = useState([]);
   const [search, setSearch] = useState("");
@@ -20,7 +20,7 @@ function Groups() {
 
   const fetchGroups = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/groups");
+      const res = await axios.get("${API}/api/groups");
       setGroups(res.data);
     } catch (err) {
       console.log(err);
@@ -40,12 +40,12 @@ function Groups() {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/groups/${editingId}`,
+          `${API}/api/groups/${editingId}`,
           form
         );
       } else {
         await axios.post(
-          "http://localhost:5000/api/groups",
+          "${API}/api/groups",
           form
         );
       }
@@ -80,7 +80,7 @@ function Groups() {
     if (!window.confirm("Delete this group?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/groups/${id}`);
+      await axios.delete(`${API}/api/groups/${id}`);
       fetchGroups();
     } catch (err) {
       console.log(err);
@@ -94,7 +94,7 @@ function Groups() {
     }
 
     const res = await axios.get(
-      `http://localhost:5000/api/groups/search/${keyword}`
+      `${API}/api/groups/search/${keyword}`
     );
 
     setGroups(res.data);

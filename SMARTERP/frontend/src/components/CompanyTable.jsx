@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function CompanyTable({
     companies,
     fetchCompanies,
@@ -30,7 +30,7 @@ function CompanyTable({
         try {
 
             await axios.delete(
-    `http://localhost:5000/api/companies/${id}`,
+    `${API}//api/companies/${id}`,
     {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

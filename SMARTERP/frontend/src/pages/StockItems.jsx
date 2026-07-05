@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function StockItems() {
 
     const [items, setItems] = useState([]);
@@ -53,7 +53,7 @@ function StockItems() {
 
             const res = await axios.get(
 
-                "http://localhost:5000/api/stock-items"
+                "${API}/api/stock-items"
 
             );
 
@@ -75,7 +75,7 @@ function StockItems() {
 
             const res = await axios.get(
 
-                "http://localhost:5000/api/stock-groups"
+                "${API}/api/stock-groups"
 
             );
 
@@ -97,7 +97,7 @@ function StockItems() {
 
             const res = await axios.get(
 
-                "http://localhost:5000/api/units"
+                "${API}/api/units"
 
             );
 
@@ -158,7 +158,7 @@ const handleChange = (e) => {
 
                 await axios.put(
 
-                    `http://localhost:5000/api/stock-items/${editingId}`,
+                    `${API}/api/stock-items/${editingId}`,
 
                     payload
 
@@ -170,7 +170,7 @@ const handleChange = (e) => {
 
                 await axios.post(
 
-                    "http://localhost:5000/api/stock-items",
+                    "${API}/api/stock-items",
 
                     payload
 
@@ -258,7 +258,7 @@ const handleChange = (e) => {
 
             await axios.delete(
 
-                `http://localhost:5000/api/stock-items/${id}`
+                `${API}/api/stock-items/${id}`
 
             );
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function InvoiceTable({ refresh, onView }) {
 
     const [invoices, setInvoices] = useState([]);
@@ -12,7 +12,7 @@ function InvoiceTable({ refresh, onView }) {
     const loadInvoices = async () => {
 
         const res = await axios.get(
-            "http://localhost:5000/api/billing"
+            "${API}/api/billing"
         );
 
         setInvoices(res.data);

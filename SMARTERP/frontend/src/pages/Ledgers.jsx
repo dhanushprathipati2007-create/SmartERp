@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 import LedgerForm from "../components/LedgerForm";
 import LedgerTable from "../components/LedgerTable";
 
@@ -23,7 +23,7 @@ function Ledgers() {
 const token = localStorage.getItem("token");
 
 const res = await axios.get(
-    "http://localhost:5000/api/ledgers",
+    "${API}/api/ledgers",
     {
         headers: {
             Authorization: `Bearer  ${localStorage.getItem("token")}`,
@@ -42,7 +42,7 @@ const res = await axios.get(
 const token = localStorage.getItem("token");
 
 await axios.delete(
-    `http://localhost:5000/api/ledgers/${id}`,
+    `${API}/api/ledgers/${id}`,
     {
         headers: {
             Authorization: `Bearer ${token}`,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function CompanyForm({
     fetchCompanies,
     editingCompany,
@@ -59,7 +59,7 @@ const handleSubmit = async (e) => {
         if (editingCompany) {
 
             res = await axios.put(
-                `http://localhost:5000/api/companies/${editingCompany.id}`,
+                `${API}/api/companies/${editingCompany.id}`,
                 company,
                 {
                     headers: {
@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
         } else {
 
             res = await axios.post(
-                "http://localhost:5000/api/companies",
+                "${API}/api/companies",
                 company,
                 {
                     headers: {

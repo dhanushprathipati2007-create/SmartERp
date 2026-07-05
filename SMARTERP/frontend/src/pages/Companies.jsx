@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 import CompanyForm from "../components/CompanyForm";
 import CompanyTable from "../components/CompanyTable";
 
@@ -21,7 +21,7 @@ function Companies() {
         try {
 
 const res = await axios.get(
-    "http://localhost:5000/api/companies",
+    "${API}/api/companies",
     {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

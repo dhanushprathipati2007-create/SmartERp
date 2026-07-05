@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const API = "http://localhost:5000/api/ledgers";
+import API from "../config";
+const API = "${API}/api/ledgers";
 
 export const getLedgers = () => axios.get(API);
 

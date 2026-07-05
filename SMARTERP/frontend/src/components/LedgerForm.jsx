@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function LedgerForm({ fetchLedgers, editingLedger, clearEdit }) {
 
     const [ledger, setLedger] = useState({
@@ -38,7 +38,7 @@ function LedgerForm({ fetchLedgers, editingLedger, clearEdit }) {
 const loadCompanies = async () => {
     try {
         const res = await axios.get(
-            "http://localhost:5000/api/companies"
+            "${API}/api/companies"
         );
 
         console.log(res.data);
@@ -73,7 +73,7 @@ const loadCompanies = async () => {
 const token = localStorage.getItem("token");
 
 await axios.put(
-    `http://localhost:5000/api/ledgers/${editingLedger.id}`,
+    `${API}/api/ledgers/${editingLedger.id}`,
     ledger,
     {
         headers: {
@@ -91,7 +91,7 @@ await axios.put(
 const token = localStorage.getItem("token");
 
 await axios.post(
-    "http://localhost:5000/api/ledgers",
+    "${API}/api/ledgers",
     ledger,
     {
         headers: {

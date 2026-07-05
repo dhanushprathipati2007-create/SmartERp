@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import API from "../config";
 function Dashboard() {
   const [dashboard, setDashboard] = useState({
     totalCompanies: 0,
@@ -107,7 +107,7 @@ function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/dashboard");
+      const res = await axios.get("${API}/api/dashboard");
 
       setDashboard({
         totalCompanies: res.data.totalCompanies || 0,

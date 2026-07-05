@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function StockGroups() {
 
     const [stockGroups, setStockGroups] = useState([]);
@@ -22,7 +22,7 @@ function StockGroups() {
         try {
 
             const res = await axios.get(
-                "http://localhost:5000/api/stock-groups"
+                "${API}/api/stock-groups"
             );
 
             setStockGroups(res.data);
@@ -57,7 +57,7 @@ function StockGroups() {
 
                 await axios.put(
 
-                    `http://localhost:5000/api/stock-groups/${editingId}`,
+                    `${API}/api/stock-groups/${editingId}`,
 
                     form
 
@@ -69,7 +69,7 @@ function StockGroups() {
 
                 await axios.post(
 
-                    "http://localhost:5000/api/stock-groups",
+                    "${API}/api/stock-groups",
 
                     form
 
@@ -118,7 +118,7 @@ function StockGroups() {
 
             await axios.delete(
 
-                `http://localhost:5000/api/stock-groups/${id}`
+                `${API}/api/stock-groups/${id}`
 
             );
 

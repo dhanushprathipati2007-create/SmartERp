@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function CustomerTable({
     customers,
     fetchCustomers,
@@ -34,7 +34,7 @@ function CustomerTable({
 
             await axios.delete(
 
-                `http://localhost:5000/api/customers/${id}`
+                `${API}/api/customers/${id}`
 
             );
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 import CustomerForm from "../components/CustomerForm";
 import CustomerTable from "../components/CustomerTable";
 
@@ -23,7 +23,7 @@ const fetchCustomers = async () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-            "http://localhost:5000/api/customers",
+            "${API}/api/customers",
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import API from "../config";
 function Units() {
 
     const [units, setUnits] = useState([]);
@@ -23,7 +23,7 @@ function Units() {
         try {
 
             const res = await axios.get(
-                "http://localhost:5000/api/units"
+                "${API}/api/units"
             );
 
             setUnits(res.data);
@@ -58,7 +58,7 @@ function Units() {
 
                 await axios.put(
 
-                    `http://localhost:5000/api/units/${editingId}`,
+                    `${API}/api/units/${editingId}`,
 
                     form
 
@@ -70,7 +70,7 @@ function Units() {
 
                 await axios.post(
 
-                    "http://localhost:5000/api/units",
+                    "${API}/api/units",
 
                     form
 
@@ -126,7 +126,7 @@ function Units() {
 
             await axios.delete(
 
-                `http://localhost:5000/api/units/${id}`
+                `${API}/api/units/${id}`
 
             );
 
