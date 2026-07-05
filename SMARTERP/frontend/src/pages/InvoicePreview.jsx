@@ -4,7 +4,7 @@ import axios from "axios";
 import API from "../config";
 //import "../styles/invoice.css";
 
-const API = "${API}/api";
+
 
 function formatCurrency(value) {
     return Number(value || 0).toLocaleString("en-IN", {
